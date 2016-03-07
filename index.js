@@ -36,8 +36,6 @@ module.exports = function(options) {
       method: this.method,
       body: parsedBody
     };
-    // set 'Host' header to options.host (without protocol prefix), strip trailing slash
-    if (options.host) opt.headers.host = options.host.slice(options.host.indexOf('://')+3).replace(/\/$/,'');
 
     if (options.requestOptions) {
       Object.keys(options.requestOptions).forEach(function (option) { opt[option] = options.requestOptions[option]; });
